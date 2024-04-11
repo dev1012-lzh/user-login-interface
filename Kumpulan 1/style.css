@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap') .fredoka-<class> {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" <width>;
+}
+
+* {
+    font-family: "Fredoka", sans-serif;
+    transition: .2s;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    color: black;
+    padding: 20px;
+    background: #00aced30;
+}
+
+header:hover {
+    background: #026e9280;
+}
+
+div.login {
+    margin-top: 30px;
+    padding: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    background-color: #003242ea;
+    border-radius: 5px;
+    color: aliceblue;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+select {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #01485f;
+    outline: white 1px solid;
+    border: transparent 1px solid;
+    color: white;
+    cursor: pointer;
+}
+
+select:hover {
+    background-color: #026e92;
+}
+
+select:active,
+select:hover {
+    outline: #00aced 3px solid;
+
+}
+
+option {
+    background: #003142;
+    color: #bee1ee;
+}
+
+
+
+button {
+    margin-top: 30px;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #FFFFFF15;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: transparent;
+}
+
+div.alert {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    background-color: red;
+    border-radius: 5px;
+    color: aliceblue;
+    animation-duration: .3s;
+    transition: .3s all;
+}
+
+div.dashboard {
+    margin: 30px;
+    padding: 10px;
+    background-color: #e1e7e920;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 5px;
+    display: none;
+    
+
+}
+
+span.namegreet {
+    color: rgb(32, 49, 102);
+    font-size: 17px;
+    padding: 10px;
+}
+
+span.namegreet:hover {
+    color: #bee1ee;
+}
+
+div.block {
+    width: calc(100%-20px);
+    height: 100px;
+    background-color: #00314230;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flexbox;
+}
+
+div.block:hover {
+    background: #00314260;
+}
+
+span.noevents {
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+}
+
+html {
+    background-image: linear-gradient(50deg, #2f768d08, #8ed7f0, white);
+    /*Fallback if url unsupported.*/
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+::selection{
+    background-color: #000;
+    color: #ffffff;
+}
+
+div.fullpage {
+
+    position: absolute;
+    z-index: -999;
+    top: 0px;
+    right: auto;
+    bottom: auto;
+    left: 0px;
+    height: 60vh;
+    width: 100%;
+    background-image: linear-gradient(0deg, #2f768d08, #8ed7f0, transparent);
+    
+
+}
+
+select,button,header{
+    user-select: none;
+}
+
+div.dashboard button{
+    background-color: white;
+    color: black;
+}
