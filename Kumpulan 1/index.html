@@ -1,10 +1,11 @@
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <script defer src="temp.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lembaga Pengawas Sesi Petang</title>
+    <title>Lembaga Pengawas Sesi Petang InfoPoint</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,77 +18,75 @@
 <body style="overflow-x: hidden;">
     <div class="fullpage"></div>
     <header><span class="greeting">Lembaga Pengawas Sesi Petang - Kumpulan 1</span></header>
-    <div class="login">
-        <h2>Log In</h2>
-        <br>
-        <p>Enter your name</p>
-        <select name="name" id="name">
-            <option value="Please Select." style="color: transparent;">Please select an option</option>
-            <option value="Aedan Lim">Aedan Lim Jun Wa</option>
-            <option value="Lim Kai Henz">Lim Kai Henz</option>
-            <option value="Chan Pei Ying">Chan Pei Ying</option>
-            <option value="Chu Wynne">Chu Wynne</option>
-            <option value="Nicholas Foo">Nicholas Foo Wen Hao</option>
-            <option value="Joanne Leong">Joanne Leong Ming En</option>
-            <option value="Lim Eujane">Lim Eujane</option>
-            <option value="Lee Jin Liang">Lee Jin Liang</option>
-            <option value="Wong Jing Han">Wong Jing Han</option>
-            <option value="Lee Yan Lin">Lee Yan Lin</option>
-            <option value="Low Jun Xuan">Low Jun Xuan</option>
-            <option value="Lee Sze Hern">Lee Sze Hern</option>
-            <option value="Chew Jun Jie">Chew Jun Jie</option>
-            <option value="Snr" style="color: red;">Senior/Ketua Log In</option>
-        </select>
-        <br>
-        <br>
-
-        <button onclick="post()">Log In</button>
-
-
-
-    </div>
-    <div class="alert">
-        No Username found. <br><br>
-        <button onclick="showlogin()">Try Again</button>
-    </div>
-    <div class="dashboard">
-        <span class="dashboardHeadGreet"></span>
-        <br>
-        <div class="block">
-            <b>Kawad Meet</b>
-            <hr>
-            Recording: Notes-Type
+    <div class="maindashboard">
+        <div class="login">
+            <h2>Log In</h2>
             <br>
-            <a href="https://docs.google.com/presentation/d/10FXHC6B24Gevzy9ZAtQX5JE4Oag-4Te0PZ1RA6Y_oGQ/edit" >View notes here</a>
-            
+            <p><b>Enter your name</b></p>
+            <select name="name" id="name">
+                <option value="Please Select." style="color: transparent;">Please select an option</option>
+                <option value="Aedan Lim">Aedan Lim Jun Wa</option>
+                <option value="Lim Kai Henz">Lim Kai Henz</option>
+                <option value="Chan Pei Ying">Chan Pei Ying</option>
+                <option value="Chu Wynne">Chu Wynne</option>
+                <option value="Nicholas Foo">Nicholas Foo Wen Hao</option>
+                <option value="Joanne Leong">Joanne Leong Ming En</option>
+                <option value="Lim Eujane">Lim Eujane</option>
+                <option value="Lee Jin Liang">Lee Jin Liang</option>
+                <option value="Wong Jing Han">Wong Jing Han</option>
+                <option value="Lee Yan Lin">Lee Yan Lin</option>
+                <option value="Low Jun Xuan">Low Jun Xuan</option>
+                <option value="Lee Sze Hern">Lee Sze Hern</option>
+                <option value="Chew Jun Jie">Chew Jun Jie</option>
+                <option value="Snr" style="color: red;">Senior/Ketua Log In</option>
+            </select>
+            <br>
+            <br>
+
+            <button onclick="post()" style="font-size: 15px;">Log In</button>
+
+
+
         </div>
-        <div class="block">
-        <span class="noevents">No Events</span>
+        <div class="alert">
+            No username found. Please log in using a valid name.<br><br>
+            <button onclick="showlogin()">Try Again</button>
         </div>
-        <div class="block">
-            <span class="noevents">No Events.</span>
+        <div class="loader"></div>
+        <div class="dashboard">
+            <span class="dashboardHeadGreet"></span>
+            <br>
+            <div class="block"><b>Kawad Meet</b>
+                <hr>
+                Recording: Notes-Type
+                <br>
+                <a href="https://docs.google.com/presentation/d/10FXHC6B24Gevzy9ZAtQX5JE4Oag-4Te0PZ1RA6Y_oGQ/edit">View
+                    notes here</a>
+            </div>
+            <div class="block">
+                <span class="noevents">No Events.</span>
+            </div>
+            <div class="block">
+                <span class="noevents">No Events.</span>
+            </div>
+            <button onclick="window.location.reload();">Log Out</button>
         </div>
-        <button onclick="window.location.reload();">Log Out</button>
     </div>
+
     <script>
 
         function post() {
-
             localStorage.setItem('user-name-LPSP', document.querySelector('select').value);
-
             hidelogin();
             nousername(document.querySelector('select').value);
-
         }
 
         function nousername(value) {
             if (value) {
                 if (value === 'Please Select.') {
-
                     setTimeout(function () {
                         document.querySelector('div.alert').style.display = 'block';
-                    }, 500)
-
+                    }, 500);
                 }
                 else {
                     var x = localStorage.getItem('user-name-LPSP');
@@ -96,23 +95,26 @@
                     var y = x + "'s Infopoint";
                     var y0 = 'Welcome';
                     showdashboard();
-
                     document.title = y0;
-                    setTimeout(function(){
+                    setTimeout(function () {
                         document.title = y;
-                    },1500);
+                    }, 1500);
                 }
             }
         }
-
         function greetUser(x) {
             document.querySelector('span.greeting').innerHTML = '<small>Welcome</small>,<span class="namegreet"> ' + x + '</span>';
         }
-
         function showdashboard() {
+            
+            setTimeout(() => {
+               document.querySelector('div.loader').style.display = 'block' 
+            }, 500);
+            setTimeout(() => {
             document.querySelector('div.dashboard').style.display = 'block';
+            document.querySelector('div.loader').style.display = 'none';
+            }, 1800);
         }
-
         function hidelogin() {
 
             document.querySelector('div.login').style.transform = `translate(1500px)`;
@@ -130,15 +132,14 @@
                 document.querySelector('div.login').style.transform = `translate(-1500px)`;
                 document.querySelector('div.login').style.transform = `translate(-50%)`;
             }, 500)
-
         }
 
-        function identifyUser(batch){
-            if (batch === 'Snr'){
+        function identifyUser(batch) {
+            if (batch === 'Snr') {
                 document.querySelector('span.dashboardHeadGreet').innerHTML = 'Welcome';
-            }else{
+            } else {
                 var y = localStorage.getItem('user-name-LPSP');
-                document.querySelector('span.dashboardHeadGreet').innerHTML = '<b>Calon Pengawas</b> <small>' + y+'</small>';
+                document.querySelector('span.dashboardHeadGreet').innerHTML = '<b>Calon Pengawas</b> <small>' + y + '</small>';
             }
         }
     </script>
