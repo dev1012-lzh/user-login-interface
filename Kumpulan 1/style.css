@@ -7,57 +7,80 @@
         "wdth" <width>;
 }
 
+div.maindashboard {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    right: 0px;
+    position: absolute;
+    background-color: #272727;
+    height: 100vh;
+    width: calc(100% - 46px);
+    border-top-left-radius: 13px;
+}
+
 * {
-    font-family: "Fredoka", sans-serif;
+    body {
+        font-family: 'Segoe UI Local', 'Segoe UI Web (West European)';
+    }
+
     transition: .2s;
 }
 
 body {
     margin: 0;
+
 }
 
 header {
+
     width: 100%;
-    color: black;
-    padding: 20px;
-    background: #00aced30;
+    color: #cfcfcf;
+    padding: 13px;
+
+
 }
 
-header:hover {
-    background: #026e9280;
+a {
+    text-decoration: underline dotted 4px;
+    color: white;
+    font-weight: bold;
 }
+
+a:hover {
+    text-decoration: underline dotted 4px;
+}
+
+
 
 div.login {
     margin-top: 30px;
-    padding: 20px;
-    margin-left: 50%;
+    padding-top: 20px;
+    
+    margin-left: 40%;
     transform: translateX(-50%);
     width: 60%;
-    background-color: #003242ea;
+    background-color: transparent;
     border-radius: 5px;
     color: aliceblue;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
 }
 
 select {
     padding: 10px;
     border-radius: 5px;
-    background-color: #01485f;
+    background-color: #202020;
     outline: white 1px solid;
     border: transparent 1px solid;
-    color: white;
+    color: #cfcfcf;
     cursor: pointer;
+    font-size: 15px;
+    
 }
 
 select:hover {
-    background-color: #026e92;
+    background-color: #272727;
+    color: white;
 }
 
-select:active,
-select:hover {
-    outline: #00aced 3px solid;
-
-}
 
 option {
     background: #003142;
@@ -73,22 +96,24 @@ button {
     border: 1px solid white;
     background-color: #FFFFFF15;
     color: white;
+    transition-duration: 0s;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: transparent;
+    outline: #00aced 3px solid;
+    border: 1px solid transparent;
 }
 
 div.alert {
     display: none;
     margin-top: 30px;
     padding: 20px;
-    margin-left: 50%;
+    margin-left: 40%;
     transform: translateX(-50%);
     width: 60%;
-    background-color: red;
-    border-radius: 5px;
+    background-color: transparent;
+    border-radius: 8px;
     color: aliceblue;
     animation-duration: .3s;
     transition: .3s all;
@@ -97,16 +122,16 @@ div.alert {
 div.dashboard {
     margin: 30px;
     padding: 10px;
-    background-color: #e1e7e920;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    background-color: transparent;
     border-radius: 5px;
+    color: white;
     display: none;
-    
+
 
 }
 
 span.namegreet {
-    color: rgb(32, 49, 102);
+    color: #cfcfcf;
     font-size: 17px;
     padding: 10px;
 }
@@ -118,7 +143,7 @@ span.namegreet:hover {
 div.block {
     width: calc(100%-20px);
     height: 100px;
-    background-color: #00314230;
+    background-color: #00314250;
     margin: 10px;
     border-radius: 10px;
     padding: 10px;
@@ -126,7 +151,7 @@ div.block {
 }
 
 div.block:hover {
-    background: #00314260;
+    background: #00314290;
 }
 
 span.noevents {
@@ -135,16 +160,18 @@ span.noevents {
 }
 
 html {
-    background-image: linear-gradient(50deg, #2f768d08, #8ed7f0, white);
+    /*background-image: linear-gradient(50deg, #2f768d08, #8ed7f0, white);*/
+
+    background: #202020;
     /*Fallback if url unsupported.*/
-    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg');
+    /*background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg');*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 
-::selection{
+::selection {
     background-color: #000;
     color: #ffffff;
 }
@@ -159,16 +186,99 @@ div.fullpage {
     left: 0px;
     height: 60vh;
     width: 100%;
-    background-image: linear-gradient(0deg, #2f768d08, #8ed7f0, transparent);
-    
+
+
 
 }
 
-select,button,header{
+select,
+button,
+header {
     user-select: none;
 }
 
-div.dashboard button{
+div.dashboard button {
     background-color: white;
     color: black;
+}
+
+@font-face {
+    font-family: 'Segoe UI Local';
+    src: local('Segoe UI Light');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Local';
+    src: local('Segoe UI Semilight');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Local';
+    src: local('Segoe UI');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Local';
+    src: local('Segoe UI Semibold');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Web (West European)';
+    src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-light.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Web (West European)';
+    src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semilight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Web (West European)';
+    src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI Web (West European)';
+    src: url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff2') format('woff2'), url('https://static2.sharepointonline.com/files/fabric/assets/fonts/segoeui-westeuropean/segoeui-semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+.loader {
+    display: none;
+    width: fit-content;
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+    color:white;
+    font-size: 20px;
+    padding-bottom: 5px;
+    background: linear-gradient(white 0 0) 0 100%/0% 3px no-repeat;
+    animation: l2 1.3s linear infinite ;
+}
+
+.loader:before {
+    content: "Loading..."
+}
+
+@keyframes l2 {
+    to {
+        background-size: 100% 2px;
+    }
 }
