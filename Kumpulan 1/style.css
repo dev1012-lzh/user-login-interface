@@ -7,14 +7,24 @@
         "wdth" <width>;
 }
 
+body {
+--color-link-bg-active: #f3f3f3;
+--sidebar-color:#00000020;
+}
+
+body.dark-theme {
+    --color-link-bg-active: #262626;
+    --sidebar-color:#cfcfcf20;
+}
+
 div.maindashboard {
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: .3s;
     right: 0px;
     position: absolute;
-    background-color: #272727;
+    background-color: var(--color-link-bg-active);
     height: 100vh;
     width: calc(100% - 46px);
-    border-top-left-radius: 13px;
+    border-top-left-radius: 8px;
 }
 
 * {
@@ -27,13 +37,12 @@ div.maindashboard {
 
 body {
     margin: 0;
-
 }
 
 header {
 
     width: 100%;
-    color: #cfcfcf;
+    color: var(--color-grey-light);
     padding: 13px;
 
 
@@ -41,7 +50,7 @@ header {
 
 a {
     text-decoration: underline dotted 4px;
-    color: white;
+    color: var(--color-text-default);
     font-weight: bold;
 }
 
@@ -54,55 +63,57 @@ a:hover {
 div.login {
     margin-top: 30px;
     padding-top: 20px;
-    
+
     margin-left: 40%;
     transform: translateX(-50%);
     width: 60%;
     background-color: transparent;
     border-radius: 5px;
-    color: aliceblue;
+    color: var(--color-text-default);
 
 }
 
 select {
     padding: 10px;
-    border-radius: 5px;
-    background-color: #202020;
-    outline: white 1px solid;
-    border: transparent 1px solid;
-    color: #cfcfcf;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom: var(--color-primary-adaptive) 2px solid;
+    color: var(--color-text-default);
     cursor: pointer;
     font-size: 15px;
-    
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 select:hover {
-    background-color: #272727;
-    color: white;
+    background-color: var(--color-grey-light);
+    color: var(--color-text-default);
+}
+
+select:active {
+
+    border-bottom: 2px var(--color-text-default) solid;
+    outline: none;
+}
+
+select:focus {
+    outline: none;
 }
 
 
 option {
-    background: #003142;
-    color: #bee1ee;
+    background:var(--color-link-bg-active);
+    color: var(--color-text-default);
+
 }
-
-
 
 button {
-    margin-top: 30px;
-    padding: 10px 50px 10px 50px;
-    border-radius: 5px;
-    border: 1px solid white;
-    background-color: #FFFFFF15;
-    color: white;
-    transition-duration: 0s;
-    cursor: pointer;
-}
-
-button:hover {
-    outline: #00aced 3px solid;
-    border: 1px solid transparent;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    
+            transition: .2s;
+    
 }
 
 div.alert {
@@ -114,7 +125,7 @@ div.alert {
     width: 60%;
     background-color: transparent;
     border-radius: 8px;
-    color: aliceblue;
+    color: var(--color-text-default);
     animation-duration: .3s;
     transition: .3s all;
 }
@@ -124,7 +135,7 @@ div.dashboard {
     padding: 10px;
     background-color: transparent;
     border-radius: 5px;
-    color: white;
+    color: var(--color-text-default);
     display: none;
 
 
@@ -155,12 +166,12 @@ div.block:hover {
 }
 
 span.noevents {
-    color: rgb(255, 255, 255);
+    color: var(--color-text-default);
     font-size: 13px;
 }
 
 html {
-    /*background-image: linear-gradient(50deg, #2f768d08, #8ed7f0, white);*/
+    /*background-image: linear-gradient(50deg, #2f768d08, #8ed7f0, var(--color-text-default));*/
 
     background: #202020;
     /*Fallback if url unsupported.*/
@@ -195,11 +206,6 @@ select,
 button,
 header {
     user-select: none;
-}
-
-div.dashboard button {
-    background-color: white;
-    color: black;
 }
 
 @font-face {
@@ -264,13 +270,13 @@ div.dashboard button {
     position: absolute;
     top: 30vh;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     font-weight: bold;
-    color:white;
+    color: var(--color-text-default);
     font-size: 20px;
     padding-bottom: 5px;
-    background: linear-gradient(white 0 0) 0 100%/0% 3px no-repeat;
-    animation: l2 1.3s linear infinite ;
+    background: linear-gradient(var(--color-text-default) 0 0) 0 100%/0% 3px no-repeat;
+    animation: l2 1.3s linear infinite;
 }
 
 .loader:before {
@@ -281,4 +287,56 @@ div.dashboard button {
     to {
         background-size: 100% 2px;
     }
+}
+
+div.sidebar {
+    position: absolute;
+    left: 0px;
+    top: 46px;
+    padding-top: 10px;
+    padding: 5px;
+}
+
+div.sidebar img:hover {
+    background-color: #cfcfcf20;
+    cursor: pointer;
+    border-radius: 8px;
+}
+div.sidebar button{
+    border: transparent 3px;
+}
+div.sidebar img:active {
+    scale: 0.8;
+    background-color: var(--color-grey-light);
+}
+ svg{
+    position:absolute;
+    width: 40px;
+    left: 3px;
+    cursor: pointer;
+    bottom: 10px;
+}
+svg:hover{
+    background-color: var(--sidebar-color);
+    border-radius: 8px;
+}
+svg:active{
+    scale: 0.8;
+}
+@media only screen and (max-width: 600px){
+    iframe{
+        display: none;
+    
+    }
+}
+
+iframe{
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    
+    
+    z-index: 9999;
+    background-color: transparent !important;
 }

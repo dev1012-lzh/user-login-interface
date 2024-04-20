@@ -1,9 +1,8 @@
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <script defer src="temp.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lembaga Pengawas Sesi Petang InfoPoint</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,15 +10,45 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/windows-ui-fabric@4.0.2/dist/config/app-config.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/windows-ui-fabric@4.0.2/dist/windows-ui.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/windows-ui-fabric@4.0.2/dist/icons/fonts/fonts.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://windows-ui.github.io/dist/windows-ui.min.js" defer crossorigin="anonymous"></script>
 
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="temp.js"></script>
 </head>
 
 <body style="overflow-x: hidden;">
+    <!--<iframe title='Lembaga Pengawas Sesi Petang Kumpulan 1' src="https://lottie.host/embed/35a95fbe-9639-44ad-bc85-ebee83d0e8bb/DWZ7b2y9Mx.json"></iframe> -->
+    <span class="icon-darktoggle">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#fff" onclick="toggle()">
+            <path
+                d="M255.862 153.973c28 .52 51.815 10.36 71.44 29.523 19.42 20.322 29.26 44.135 29.523 71.44-.52 28-10.36 51.814-29.524 71.44-20.32 19.42-44.133 29.26-71.438 29.523-28-.52-51.815-10.362-71.44-29.525-19.42-20.32-29.26-44.134-29.523-71.44.52-28 10.36-51.814 29.522-71.44 20.322-19.42 44.135-29.26 71.44-29.522zm0 169.65c18.945-.514 35.078-7.203 48.398-20.067 13.262-14.154 20.026-30.36 20.29-48.62-.52-18.808-7.284-34.94-20.29-48.4-14.143-13.262-30.276-20.025-48.398-20.29-18.952.524-35.158 7.287-48.62 20.29-13.118 14.007-19.808 30.14-20.07 48.4.517 19.088 7.207 35.295 20.07 48.62 14.015 13.117 30.223 19.806 48.62 20.068zM272 129.698h-32.275V40.87H272v88.827zm-32.275 250.477H272V469h-32.275v-88.826zm230.202-141.376v32.275H381.1v-32.275h88.827zm-339.303 32.275H41.798v-32.275h88.826v32.275zm25.168-93.273l-62.687-62.918L115.81 92.18l62.917 62.685zm200.14 154.27l62.687 62.92-22.704 22.702-62.918-62.686zm0-154.27L333 154.865l62.918-62.686 22.704 22.702zm-200.14 154.27l22.935 22.936-62.918 62.686-22.705-22.703z" />
+        </svg>
+    </span>
+
     <div class="fullpage"></div>
     <header><span class="greeting">Lembaga Pengawas Sesi Petang - Kumpulan 1</span></header>
+    <div class="sidebar">
+        <button style="padding: 0px !important;background-color: transparent;outline: none;" data-win-toggle="modal"
+            data-win-target="#MyDialog"><img
+                src="png-transparent-messenger-facebook-messenger-messenger-logo-social-media-icon-thumbnail-removebg-preview.png"
+                alt="" srcset="" width="36px"></button>
+
+
+
+    </div>
     <div class="maindashboard">
         <div class="login">
+
             <h2>Log In</h2>
             <br>
             <p><b>Enter your name</b></p>
@@ -43,24 +72,28 @@
             <br>
             <br>
 
-            <button onclick="post()" style="font-size: 15px;">Log In</button>
+            <button onclick="post()" class="app-btn app-btn-primary"><span>Log In</span></button>
 
 
 
         </div>
         <div class="alert">
             No username found. Please log in using a valid name.<br><br>
-            <button onclick="showlogin()">Try Again</button>
+            <button onclick="showlogin()" class="app-btn app-btn-primary">Try Again</button>
         </div>
         <div class="loader"></div>
         <div class="dashboard">
             <span class="dashboardHeadGreet"></span>
             <br>
             <div class="block"><b>Kawad Meet</b>
-                <hr>
+                <br>
                 Recording: Notes-Type
                 <br>
-                <a href="https://docs.google.com/presentation/d/10FXHC6B24Gevzy9ZAtQX5JE4Oag-4Te0PZ1RA6Y_oGQ/edit">View
+                <a href="https://docs.google.com/presentation/d/10FXHC6B24Gevzy9ZAtQX5JE4Oag-4Te0PZ1RA6Y_oGQ/edit"
+                    onclick="setTimeout(() => {
+                        var x = localStorage.getItem('user-name-LPSP');
+                        alert('Dear '+x+', taking you to the page need a little bit longer...');
+                }, 2000);">View
                     notes here</a>
             </div>
             <div class="block">
@@ -69,11 +102,29 @@
             <div class="block">
                 <span class="noevents">No Events.</span>
             </div>
-            <button onclick="window.location.reload();">Log Out</button>
+            <button onclick="window.location.reload();" class="app-btn app-btn-primary" style="margin-top: 50px;">Log
+                Out</button>
         </div>
     </div>
-
+    <div class="app-dialog" id="MyDialog" data-win-toggle="modal" data-win-target="#MyDialog" tabindex="-1">
+        <div class="app-dialog-modal" aria-modal="true" role="dialog">
+            <div class="app-dialog-header">
+                <h3>Messenger</h3>
+            </div>
+            <div class="app-dialog-body" style="padding: 20px;">
+                <button class="app-btn app-btn-outline-primary">Calon Pengawas 2024</button>
+                <button class="app-btn app-btn-outline-primary">Kumpulan 1 @ 1 Calon 2024</button>
+            </div>
+            <div class="app-dialog-footer">
+                <button class="app-btn app-btn-primary" type="button" data-win-toggle="modal"
+                    data-win-target="#MyDialog">
+                    <span>Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
     <script>
+        Appearance.setDarkScheme();
 
         function post() {
             localStorage.setItem('user-name-LPSP', document.querySelector('select').value);
@@ -106,13 +157,13 @@
             document.querySelector('span.greeting').innerHTML = '<small>Welcome</small>,<span class="namegreet"> ' + x + '</span>';
         }
         function showdashboard() {
-            
+
             setTimeout(() => {
-               document.querySelector('div.loader').style.display = 'block' 
+                document.querySelector('div.loader').style.display = 'block'
             }, 500);
             setTimeout(() => {
-            document.querySelector('div.dashboard').style.display = 'block';
-            document.querySelector('div.loader').style.display = 'none';
+                document.querySelector('div.dashboard').style.display = 'block';
+                document.querySelector('div.loader').style.display = 'none';
             }, 1800);
         }
         function hidelogin() {
